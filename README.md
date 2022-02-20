@@ -2,11 +2,11 @@
 
 Testes:
 
-Controller FindAll: ok;
-Controller FindById: ok;
-ControllerFindByTitulo: ok;
-Controller Post Put I: ok;
-Controller Post Put II: ok;
+Controller FindAll: ok;\
+Controller FindById: ok;\
+ControllerFindByTitulo: ok;\
+Controller Post Put I: ok;\
+Controller Post Put II: ok;\
 Controller Delete: ok.
 
 ;D
