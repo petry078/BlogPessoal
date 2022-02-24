@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+import org.generation.blogPessoal.model.Postagem;
+import org.generation.blogPessoal.repository.PostagemRepository;
 
 @RestController
 @RequestMapping("/postagens")
@@ -37,8 +43,8 @@ public class PostagemController
 	public ResponseEntity<Postagem> GetById(@PathVariable long id)
 	{
 		return repository.findById(id)
-		.map(resp -> ResponseEntity.ok(resp))
-		.orElse(ResponseEntity.notFound().build());	
+			.map(resp -> ResponseEntity.ok(resp))
+			.orElse(ResponseEntity.notFound().build());	
 	}
 	
 	@GetMapping("/titulo/{titulo}")
