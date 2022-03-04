@@ -1,13 +1,5 @@
-# Blog Pessoal Generation Brasil (Atualizado e funcionando)
+# Blog Pessoal Generation Brasil
 
-Testes:
-
-Controller FindAll: ok;\
-Controller FindById: ok;\
-ControllerFindByTitulo: ok;\
-Controller Post Put I: ok;\
-Controller Post Put II: ok;\
-Controller Delete: ok.
-
-;D
-
+* Java & Spring Boot no back-end;
+* MySQL no banco de dados;
+* HTML, CSS, JavaScript e Angular no front-end.
