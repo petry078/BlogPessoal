@@ -12,52 +12,45 @@ import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.responses.ApiResponse;
 import io.swagger.v3.oas.models.responses.ApiResponses;
 
+
 @Configuration
 public class SwaggerConfig {
 
 	@Bean
-	public OpenAPI springBlogPessoalOpenAPI() {
+	public OpenAPI springOpenAPI() {
 		return new OpenAPI()
 				.info(new Info()
-					.title("Projeto Blog Pessoal")
-					.description("Projeto Blog Pessoal - Generation Brasil")
-					.version("v0.0.1")
-				.license(new License()
-					.name("Guilherme Petry")
-					.url("https://github.com/petry078/BlogPessoal"))
-				.contact(new Contact()
-					.name("Guilherme Petry")
-					.url("https://github.com/petry078/BlogPessoal")
-					.email("petry078@gmail.com")))
+						.title("Project Gees")
+						.description("This is a Ecomerce project")
+						.version("v0.0.1")
+						.license(new License()
+								.name("Gees Brazil")
+								.url("<https://brazil.generation.org/>"))
+						.contact(new Contact()
+								.name("Github Boaz")
+								.url("<https://github.com/GustavoBoaz/>")
+								.email("gustavo.boaz@hotmail.com")))
 				.externalDocs(new ExternalDocumentation()
-					.description("GitHub")
-					.url("https://github.com/petry078/BlogPessoal"));
-	}
-
-	@Bean
-	public OpenApiCustomiser customerGlobalHeaderOpenApiCustomiser() {
-
-		return openApi -> {
-			openApi.getPaths().values().forEach(pathItem -> pathItem.readOperations().forEach(operation -> {
-
-				ApiResponses apiResponses = operation.getResponses();
-
-				apiResponses.addApiResponse("200", createApiResponse("Sucesso!"));
-				apiResponses.addApiResponse("201", createApiResponse("Objeto Persistido!"));
-				apiResponses.addApiResponse("204", createApiResponse("Objeto Excluído!"));
-				apiResponses.addApiResponse("400", createApiResponse("Erro na Requisição!"));
-				apiResponses.addApiResponse("401", createApiResponse("Acesso Não Autorizado!"));
-				apiResponses.addApiResponse("404", createApiResponse("Objeto Não Encontrado!"));
-				apiResponses.addApiResponse("500", createApiResponse("Erro na Aplicação!"));
-
-			}));
-		};
+						.description("Github Project")
+						.url("<https://github.com/GustavoBoaz/project_Gees>"));
 	}
 
 	private ApiResponse createApiResponse(String message) {
-
 		return new ApiResponse().description(message);
-
 	}
-	
+
+	@Bean
+	public OpenApiCustomiser customerGlobalResponseStatus() {
+		return openApi -> {
+			openApi.getPaths().values().forEach(pathItem -> pathItem.readOperations().forEach(operation -> {
+				ApiResponses api = operation.getResponses();
+
+				api.addApiResponse("200", createApiResponse("Sucess!"));
+				api.addApiResponse("201", createApiResponse("Created!"));
+				api.addApiResponse("400", createApiResponse("Request error!"));
+				api.addApiResponse("401", createApiResponse("Not authorized!"));
+				api.addApiResponse("500", createApiResponse("Internal server Error!"));
+			}));
+		};
+	}
 }
