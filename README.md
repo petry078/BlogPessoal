@@ -1,5 +1,21 @@
-# Blog Pessoal Generation Brasil
+# Blog Pessoal
 
-* Java & Spring Boot no back-end (+ Spring Security);
-* MySQL no banco de dados;
-* HTML, CSS, JavaScript e Angular no front-end.
+Projeto de blog pessoal feito durante as aulas do bootcamp de desenvolvimento web full stack da Generation Brasil.
+
+## Stack
+
+No back-end:
+* Java;
+* MySQL & PostegresSQL;
+* Spring Boot;
+* NodeJS;
+* Deploy com Heroku.
+
+[No front-end](https://github.com/petry078/blogPessoalAngular/):
+* HTML, CSS & JavaScript;
+* TypeScripe;
+* Angular;
+* Bootstrap;
+* Figma;
+* jQuery;
+* Popper.JS.
