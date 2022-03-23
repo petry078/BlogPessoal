@@ -1,6 +1,6 @@
 # Blog Pessoal
 
-Projeto de blog pessoal feito durante as aulas do bootcamp de desenvolvimento web full stack da Generation Brasil.
+Repositório do back-end do projeto de Blog feito durante as aulas do bootcamp de desenvolvimento web full stack da Generation Brasil.
 
 ## Stack
 
