@@ -29,19 +29,21 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull(message = "O atributo Nome é Obrigatório!")
+	@NotNull(message = "O atributo nome é Obrigatório!")
 	private String nome;
 
 	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caractéres")
 	private String foto;
 
-	@NotNull(message = "O atributo Usuário é Obrigatório!")
-	@Email(message = "O atributo Usuário deve ser um email válido!")
+	@NotNull(message = "O atributo usuário é obrigatório!")
+	@Email(message = "O atributo usuário deve ser um e-mail válido!")
 	private String usuario;
 
-	@NotBlank(message = "O atributo Senha é Obrigatório!")
-	@Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
+	@NotBlank(message = "O atributo senha é obrigatório!")
+	@Size(min = 8, message = "A senha deve ter no mínimo 8 caracteres.")
 	private String senha;
+	
+	private String tipo;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
@@ -107,4 +109,13 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
 }
