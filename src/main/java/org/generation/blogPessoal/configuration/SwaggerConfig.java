@@ -25,14 +25,14 @@ public class SwaggerConfig {
 						.version("v0.0.1")
 						.license(new License()
 								.name("Blog Pessoal Petry")
-								.url("<https://petry078.github.io/>"))
+								.url("https://petry078.github.io"))
 						.contact(new Contact()
 								.name("Guilherme M. Petry")
-								.url("<https://petry078.github.io/>")
+								.url("https://petry078.github.io")
 								.email("petry078@gmail.com")))
 				.externalDocs(new ExternalDocumentation()
 						.description("GitHub")
-						.url("<https://github.com/petry078/BlogPessoal>"));
+						.url("https://github.com/petry078/BlogPessoal"));
 	}
 
 	private ApiResponse createApiResponse(String message) {
